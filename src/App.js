@@ -11,14 +11,11 @@ import News from './components/News';
 
 
 
-export default function App() {
+export default function App(e) {
   // 7d69e462e1ad4c77b086b38cbe4a331d
   const [data, setdata] = useState([])
   const [ query, setquery] = useState('')
   // const url = "https://newsapi.org/v2/everything?q=sports&apiKey=7d69e462e1ad4c77b086b38cbe4a331d"
-
-  
-
 
   useEffect(() => {
     const url = 'https://newsapi.org/v2/everything?q=politics&apiKey=7d69e462e1ad4c77b086b38cbe4a331d'
@@ -79,27 +76,16 @@ export default function App() {
 
   return (
     <Router>
-
       <div>
-        <Navbar />
-        
-        <input
-        onchange={e=> setquery(e.target.value)}
-        type="search"
-        placeholder="Search Here"
-        value={query}>
-        </input>
-        <button onClick={HandleSearch}>Search</button>
-
+        <Navbar HandleSearch={HandleSearch} setquery={setquery} query={query}/>  
         <Routes>
+        <Route path='/News' element={<News data={data}/>}/>
           <Route path='/Home' element={<Home />} />
           <Route path='/AboutUs' element={<AboutUs/>}/>
           <Route path='/ContactUS' element={<ContactUS/>}/>
           <Route path='/Login' element={<Login/>}/>
-          <Route path='/News' element={<News />}/>
-        </Routes>
-        
-        
+          
+        </Routes> 
         <Footer />
       </div>
     </Router>

@@ -11,6 +11,8 @@ export default function Cards(props) {
 
         <h1 class='title'>{props.title}</h1>
         <h2 class='sub-title'>{props.description}</h2>
+        
+
         <div class="description">{props.content}</div>
 
       </div>

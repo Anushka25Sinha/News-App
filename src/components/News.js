@@ -2,7 +2,7 @@ import React from 'react'
 import Cards from './Cards'
 
 
-export default function News() {
+export default function News(props) {
     return (
         <div class='container'>
             {/* <Cards/>
@@ -11,13 +11,13 @@ export default function News() {
         <Cards/> */}
             {
                 //data &&
-                data.map(function (e) {
+                props.data.map(function (e) {
                     return (
                         <Cards
                             author={e.author}
                             title={e.title}
                             description={e.description}
-                            // url={e.url}
+                            url={e.url}
                             urlToImage={e.urlToImage}
                             content={e.content}
                         />
