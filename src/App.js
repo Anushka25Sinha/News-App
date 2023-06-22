@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import FooterNew from './components/FooterNew'
 import Cards from './components/Cards'
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Home from './components/Home'
-import AboutUs from './components/About Us';
 import ContactUS from './components/ContactUS';
 import Login from './components/Login';
 import News from './components/News';
@@ -14,7 +13,7 @@ import News from './components/News';
 export default function App(e) {
   // 7d69e462e1ad4c77b086b38cbe4a331d
   const [data, setdata] = useState([])
-  const [ query, setquery] = useState('')
+  const [query, setquery] = useState('')
   // const url = "https://newsapi.org/v2/everything?q=sports&apiKey=7d69e462e1ad4c77b086b38cbe4a331d"
 
   useEffect(() => {
@@ -34,7 +33,7 @@ export default function App(e) {
     fetchData();
   }, []);
 
-  const HandleSearch =()=>{
+  const HandleSearch = () => {
     const url = 'https://newsapi.org/v2/everything?q=${query}&apiKey=7d69e462e1ad4c77b086b38cbe4a331d'
 
     const fetchData = async () => {
@@ -77,16 +76,16 @@ export default function App(e) {
   return (
     <Router>
       <div>
-        <Navbar HandleSearch={HandleSearch} setquery={setquery} query={query}/>  
+        <Navbar HandleSearch={HandleSearch} setquery={setquery} query={query} />
         <Routes>
-        <Route path='/News' element={<News data={data}/>}/>
-          <Route path='/Home' element={<Home />} />
-          <Route path='/AboutUs' element={<AboutUs/>}/>
-          <Route path='/ContactUS' element={<ContactUS/>}/>
-          <Route path='/Login' element={<Login/>}/>
-          
-        </Routes> 
-        <Footer />
+          <Route path='/News' element={<News data={data} />} />
+          <Route path='/' element={<Home data={data} />} />
+          {/* <Route path='/AboutUs' element={<AboutUs />} /> */}
+          <Route path='/ContactUS' element={<ContactUS />} />
+          <Route path='/Login' element={<Login />} />
+
+        </Routes>
+        <FooterNew />
       </div>
     </Router>
 

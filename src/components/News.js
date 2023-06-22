@@ -4,7 +4,7 @@ import Cards from './Cards'
 
 export default function News(props) {
     return (
-        <div class='container'>
+        <div className='container'>
             {/* <Cards/>
         <Cards/>
         <Cards/>

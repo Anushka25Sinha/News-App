@@ -21,7 +21,8 @@
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
-  letter-spacing:2px
+  letter-spacing:2px;
+  text-align: left;
 }
 .site-footer a
 {
@@ -35,11 +36,12 @@
 .footer-links
 {
   padding-left:0;
-  list-style:none
+  
 }
 .footer-links li
 {
   display:block
+  
 }
 .footer-links a
 {
